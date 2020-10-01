@@ -1,18 +1,10 @@
 'use strict';
 
-import Kruskal from "./Kruskal.js";
-import Graph from "./Graph.js";
+let Kruskal =  require("./Kruskal")
 
 let fs = require('fs'),
     readline = require('readline');
 
-class Edge {
-    constructor(v1, v2, w = 0) {
-        this.v1 = v1;
-        this.v2 = v2;
-        this.w = w;
-    }
-}
 
 function readFile(fileName) {
 
@@ -51,7 +43,7 @@ function readFile(fileName) {
 
   rl.on('close', () => {
     if (gNodes && gEdges && gFrom.length && gTo.length && gWeight.length) {
-      kru.kruskal(gNodes, gEdges, gFrom, gTo, gWeight);
+      kru.krk(gNodes, gEdges, gFrom, gTo, gWeight);
     } else console.log('invalid data file');
   });
 }
